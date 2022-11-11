@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../axios';
 
 function User() {
   const { login } = useParams();
@@ -25,6 +25,8 @@ function User() {
     };
     fetchUserInformation();
   }, []);
+
+
   return (
     <Container>
       <Back>

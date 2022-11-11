@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 function User({user}) {
-  const { avatar_url, login, id} = user;
+  const { avatar_url, login, id } = user;
   return (
     <Users>
       <Img 
