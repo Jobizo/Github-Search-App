@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
 import axios from '../axios';
+import Repo from './ui/Repo';
+import location from './images/location.png';
+import user from './images/user.png';
+import github from './images/github.png';
+import site from './images/site.png';
 
 function User() {
   const { login } = useParams();
@@ -41,12 +46,12 @@ function User() {
           <p>{userInfo.bio}</p>
           <MoreData>
             <p>
-              <img src='images/user.png' alt='' />
+              <img src={user} alt='' /> 
               {userInfo.followers} Followers. Following {userInfo.following}
             </p>
-            {userInfo.location && <p><img src='images/location.png' alt='' />{userInfo.location}</p>}
-            {userInfo.blog && <p><img src='images/site.png' alt='' />{userInfo.blog}</p>}
-            <p><img src='images/github.png' alt='' /><a href={userInfo.html_url}>View Github Profile</a></p>
+            {userInfo.location && <p><img src={location} alt='' />{userInfo.location}</p>}
+            {userInfo.blog && <p><img src={site} alt='' /><a href={userInfo.blog}>Personal Portfolio</a></p>}
+            <p><img src={github} alt='' /><a href={userInfo.html_url}>View Github Profile</a></p>
           </MoreData>
         </UserContent>
       </UserInformation>
@@ -121,11 +126,4 @@ const UserRepos = styled.div`
   margin: 20px 0;
   border-radius: 10px;
 `
-const Repo = styled.div`
-  padding: 20px;
-  border-bottom: 1px solid #444;
 
-  a {
-    color: #6cc644;
-  }
-`

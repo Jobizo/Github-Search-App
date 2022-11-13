@@ -140,9 +140,15 @@ const Form = styled.div`
 
   button {
     padding: 14px 40px;
+    opacity: 0.85;
     background: #6cc644;
     margin: 0 8px;
     color: #f5f5f5;
+    cursor: pointer;
+
+    &:hover {
+      background: rgb(198, 198, 198);
+    }
   }
 `
 
